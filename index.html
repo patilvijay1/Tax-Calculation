@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header"> Tax Calculator</h1>
+        <form    id="tax-form" name="tax-form"  >
+            <div class="form-group">
+                <label for="gross-income">Enter gross annual income</label>
+                <input type="text" id="gross-income" name="grossIncome" class="input" placeholder="Enter gross annual income">
+                <span class="error-icon" id="gross-income-error">
+                    <i class='bx bxs-error-circle' aria-hidden="true" style='color:#f80909'></i>
+                    <span class="tooltip">Please enter a valid number & filled not empty</span>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="extra-income">Enter extra income</label>
+                <input type="text" id="extra-income" name="extraIncome" class="input" placeholder="Enter extra income from other sources">
+                <span class="error-icon" id="extra-income-error">
+                    <i class='bx bxs-error-circle' style='color:#f80909'  ></i>
+                    <span class="tooltip">Please enter a valid number & filled not empty</span>
+                </span>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Enter age group</label>
+                <select id="age" name="age" required>
+                    <option value="#">Select age</option>
+                    <option value="<40">Less than 40</option>
+                    <option value=">=40 & <60">40 to less than 60</option>
+                    <option value=">=60">60 or more</option>
+                </select>
+                <span class="error-icon" id="age-error">
+                    <i class='bx bxs-error-circle' style='color:#f80909'  ></i>
+                    <span class="tooltip">Please select your age & filled not empty</span>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="deductions">Enter total applicable deductions</label>
+                <input type="text" id="deductions" name="deductions" class="input" placeholder="Add total applicable deductions">
+                <span class="error-icon" id="deductions-error">
+                    <i class='bx bxs-error-circle' style='color:#f80909'></i>
+                    <span  class="tooltip">Please enter a valid number & filled not empty</span>
+                </span>
+            </div>
+            <button type="submit" class="btn" id="btn">Submit</button>
+        </form>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <p id="modal-message"></p>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
