@@ -16,7 +16,6 @@ function validationform() {
     if (!grossIncome || isNaN(grossIncome)) {
         isValid = false;
         document.getElementById('gross-income-error').classList.add('active'); // Show error icon for gross income field
-        document.getElementById('tooltip').innerHTML = "vijaypatil";
       } else {
         document.getElementById('gross-income-error').classList.remove('active'); // Hide error icon for gross income field if it's filled
       }
@@ -42,7 +41,7 @@ function validationform() {
         document.getElementById('age-error').classList.remove('active'); // Hide error icon for age field if it's filled
       }
       
-
+      return isValid;
   }
 
 // Function to calculate tax
@@ -87,6 +86,7 @@ document.getElementById("close-modal").addEventListener("click", function() {
 document.getElementById("tax-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
     if (validationform()) {
+      calculateTax();
         showModal(); // If form is valid, calculate tax and show modal
     }
 });
